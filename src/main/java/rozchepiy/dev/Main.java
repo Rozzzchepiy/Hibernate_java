@@ -4,6 +4,7 @@ package rozchepiy.dev;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import rozchepiy.dev.services.ProfileService;
 import rozchepiy.dev.services.StudentService;
 
 import java.time.LocalDateTime;
@@ -14,6 +15,8 @@ public class Main {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("rozchepiy.dev");
         SessionFactory sessionFactory = context.getBean(SessionFactory.class);
         StudentService studentService = context.getBean(StudentService.class);
+        ProfileService profileService = context.getBean(ProfileService.class);
+
 
         Student student1 = new Student("Vasya", 22);
         Student student2 = new Student("Petya", 23);
@@ -23,17 +26,7 @@ public class Main {
 
         Profile profile1 = new Profile("My bio", LocalDateTime.now(), student1);
 
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.persist(profile1);
-        session.getTransaction().commit();
-        session.close();
-
-        session = sessionFactory.openSession();
-
-        profile1 = session.get(Profile.class, 1L);
-
-        session.close();
+        profileService.saveProfile(profile1);
 
     }
 }
