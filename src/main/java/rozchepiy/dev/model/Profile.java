@@ -1,4 +1,4 @@
-package rozchepiy.dev;
+package rozchepiy.dev.model;
 
 import jakarta.persistence.*;
 
@@ -20,6 +20,8 @@ public class Profile {
     @OneToOne
     @JoinColumn(name = "student_id", referencedColumnName = "id")
     private Student student;
+
+
 
     public Profile(){
     }

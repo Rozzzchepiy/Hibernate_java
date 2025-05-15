@@ -3,10 +3,10 @@ package rozchepiy.dev.services;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Service;
-import rozchepiy.dev.Student;
-import rozchepiy.dev.TransactionHelper;
+import rozchepiy.dev.model.Student;
+import rozchepiy.dev.util.TransactionHelper;
+
 
 import java.util.List;
 

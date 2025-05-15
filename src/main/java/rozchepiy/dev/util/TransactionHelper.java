@@ -1,4 +1,4 @@
-package rozchepiy.dev;
+package rozchepiy.dev.util;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

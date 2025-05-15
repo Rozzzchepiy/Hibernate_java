@@ -1,10 +1,9 @@
 package rozchepiy.dev.services;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
-import rozchepiy.dev.Profile;
-import rozchepiy.dev.TransactionHelper;
+import rozchepiy.dev.model.Profile;
+import rozchepiy.dev.util.TransactionHelper;
 
 @Service
 public class ProfileService {
